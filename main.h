@@ -44,7 +44,6 @@
 	va_list list, char buffer[], int flags, int width, int precision, int size);
 
 	/*** function ***/
-
 	/* print chars and strings */
 	int print_char(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
@@ -80,9 +79,9 @@
 
 	/* handle other specifiers */
 	int get_flags(const char *format, int *b);
-	int get_width(const char *format, int *i, va_list list);
+	int get_width(const char *format, int *b, va_list list);
 	int get_precision(const char *format, int *b, va_list list);
-	int get_size(const char *format, int *i);
+	int get_size(const char *format, int *b);
 
 	/*print string in reverse*/
 	int print_reverse(va_list types, char buffer[],
@@ -107,7 +106,7 @@
 	int flags, int width, int precision, int size);
 
 	/** utils **/
-	int it_printable(char);
+	int is_printable(char);
 	int append_hexa_code(char, char[], int);
 	int it_digit(char);
 
